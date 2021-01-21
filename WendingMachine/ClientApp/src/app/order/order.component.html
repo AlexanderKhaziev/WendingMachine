@@ -1,0 +1,59 @@
+<h1>Доступные монеты</h1>
+<div *ngFor="let c of coins" class="line">
+  <button class="btn btn-primary coin"
+          [disabled]="!c.active"
+          (click)="addAmount(c.value)">
+    {{ c.value }} у.е.
+  </button>
+</div>
+<div class="line">
+  <input type="text" readonly name="amount" value="{{ amount }}" />
+</div>
+
+<h1>Список напитков</h1>
+<table *ngIf="products; else notfound" class="table table-striped">
+  <thead>
+    <tr>
+      <td>Наименование</td>
+      <td>Цена</td>
+      <td>Количество</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of products">
+      <td>{{p?.name}}</td>
+      <td>{{p?.price}} у.е.</td>
+      <td>{{p?.count}}</td>
+      <td>
+        <button class="btn btn-sm btn-primary" (click)="addItemToOrder(p)"
+                [disabled]="p?.count==0">
+          Выбрать
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3>Ваш заказ</h3>
+<div *ngIf="orders.length; else empty">
+  <div>
+    <p *ngFor="let o of orders">
+      <span>{{ o.name }} <strong>{{ o.count }}</strong></span>
+    </p>
+    <button class="btn btn-secondary" (click)="getOrder()">{{ text }}</button>
+  </div>
+</div>
+
+<!--
+<div>
+  <img src="../assets/images/pepsi.png" width="45" height="45" />
+</div>
+-->
+
+<ng-template #notfound>
+  <p>Нет доступных напитков</p>
+</ng-template>
+
+<ng-template #empty>
+  <p>Заказ пустой</p>
+</ng-template>

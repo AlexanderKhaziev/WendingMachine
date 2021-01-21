@@ -1,0 +1,14 @@
+.line {
+  display: inline-block;
+  margin: 5px;
+}
+
+.coin {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.disabled-coin {
+    opacity: .5;
+}

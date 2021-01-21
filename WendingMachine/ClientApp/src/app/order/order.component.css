@@ -1,0 +1,18 @@
+.coin {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+/*button:hover:not(.disabled) {
+    opacity: .9;
+}*/
+
+input {
+  text-align: right;
+}
+
+.line {
+  display: inline-block;
+  margin: 5px;
+}

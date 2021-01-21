@@ -1,0 +1,11 @@
+<div class="container">
+  <div *ngIf="isAdmin; else user">
+    <admin></admin>
+  </div>
+</div>
+
+<ng-template #user>
+  <div>
+    <order></order>
+  </div>
+</ng-template>
