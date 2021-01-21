@@ -26,7 +26,7 @@ namespace WendingMachine
 
             //string connString = @"Data Source=(local)\SQLEXPRESS;AttachDbFilename=|DataDirectory|\wending.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True";
 
-            string connString = "Server=(localdb)\\v14.0;AttachDBFilename=.\\App_Data\\wending.mdf;Trusted_Connection=true;MultipleActiveResultSets=true";
+            string connString = "Server=(localdb)\\MSSQLLocalDB;AttachDBFilename=.\\App_Data\\wending.mdf;Trusted_Connection=true;MultipleActiveResultSets=true";
 
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connString));
             services.AddControllers(); // ?
